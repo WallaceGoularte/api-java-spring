@@ -1,12 +1,11 @@
-package com.projeto.repositories;
+package com.projeto.api.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
-import com.projeto.domain.Cliente;
+import com.projeto.api.domain.Cliente;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, Integer>, JpaSpecificationExecutor<Cliente> {
+public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
 }

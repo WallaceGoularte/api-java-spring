@@ -1,4 +1,4 @@
-package com.projeto.domain;
+package com.projeto.api.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -25,7 +25,6 @@ public class Cliente implements Serializable {
 
 	public Cliente() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Cliente(final Integer id, final String nomeCompleto, final LocalDate dataNascimento, final String telefone) {
