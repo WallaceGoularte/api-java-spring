@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.projeto.domain.Cliente;
-import com.projeto.services.ClienteService;
+import com.projeto.api.domain.Cliente;
+import com.projeto.api.services.ClienteService;
 
 @RestController
 @RequestMapping(value = "/clientes")
@@ -40,8 +40,8 @@ public class ClienteResouce {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Cliente> obterClientePorId(@PathVariable final Integer idCliente) {
-		final Cliente cliente = this.clienteService.obterClientePorId(idCliente);
+	public ResponseEntity<Cliente> obterClientePorId(@PathVariable final Integer id) {
+		final Cliente cliente = this.clienteService.obterClientePorId(id);
 
 		return ResponseEntity.ok().body(cliente);
 	}

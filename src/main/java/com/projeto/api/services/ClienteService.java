@@ -1,12 +1,13 @@
-package com.projeto.services;
+package com.projeto.api.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.projeto.domain.Cliente;
-import com.projeto.repositories.ClienteRepository;
+import com.projeto.api.domain.Cliente;
+import com.projeto.api.repositories.ClienteRepository;
 
 @Service
 public class ClienteService {
@@ -23,7 +24,8 @@ public class ClienteService {
 	}
 
 	public Cliente obterClientePorId(final Integer idCliente) {
-		return this.clienteRepository.findById(idCliente).orElseThrow();
+		final Optional<Cliente> cliente = this.clienteRepository.findById(idCliente);
+		return cliente.orElse(null);
 	}
 
 }
